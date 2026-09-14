@@ -1,0 +1,20 @@
+# The cask is generated, so what can go wrong is a Homebrew rule changing under it or a release
+# asset going missing. Both show up here, on every push and on the one-file pull requests
+# `brew bump-cask-pr` opens.
+name: Audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    runs-on: macos-15
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@1e34f2e2acaa766b7efacb8c26352e6abbb023f9 # 2026.09.13.1
+      # Homebrew 7 loads nothing from a tap it has not been told to trust, and `brew style` on an
+      # untrusted tap skips every file with a warning and passes — which is not a check at all.
+      - run: brew trust subev/libratory
+      - run: brew style subev/libratory
+      - run: brew audit --cask --online --strict subev/libratory/libratory
