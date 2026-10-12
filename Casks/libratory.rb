@@ -1,6 +1,6 @@
 cask "libratory" do
-  version "26.1011.2"
-  sha256 "8d8e64c90c423ce60c8f998266d05b6ac336413fd9caf64b0cbf18305f5253ec"
+  version "26.1012.0"
+  sha256 "6f6698bf25e97d3ec96ac9c0da15194887c7478d238051a67ca70ad13fb98b96"
 
   url "https://github.com/subev/libratory/releases/download/v#{version}/Libratory-arm64.zip"
   name "Libratory"
