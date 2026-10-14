@@ -1,6 +1,6 @@
 cask "libratory" do
-  version "26.1013.1"
-  sha256 "5ed6d16dea9659968b8ace9a6108a381ac737262785cb5a5dfced5d8e26af832"
+  version "26.1014.0"
+  sha256 "1cf7ec0a7dd70cf3e2ee28cb192f42ac38a083122e7fc5691df842551139ab3d"
 
   url "https://github.com/subev/libratory/releases/download/v#{version}/Libratory-arm64.zip"
   name "Libratory"
@@ -14,7 +14,7 @@ cask "libratory" do
 
   auto_updates true
   depends_on arch: :arm64
-  depends_on macos: :ventura
+  depends_on macos: :sonoma
 
   app "Libratory.app"
 
